@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ANDREW CHALMERS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap">
+    <style>
+        /* Add some basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Set background color to white for the entire body */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add margin around the container */
+            background-color: #fff; /* Add a white background to the container */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a card effect */
+        }
+        header {
+            background-color: #fff; /* Add white background to the header */
+            color: #333; /* Change text color for better contrast */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically center content */
+            border-bottom: 1px solid #333; /* Add a horizontal line */
+            font-family: 'PT Sans Narrow', sans-serif; /* Apply PT Sans Narrow to the header */
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'PT Sans Narrow', sans-serif; /* Change the font family */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        /* Change tab text color to black and make it bold */
+        nav ul li a {
+            color: #000;
+            font-weight: normal;
+            text-decoration: none; /* Remove underlines */
+        }
+        /* Style for active tab */
+        nav ul li.active a {
+            font-weight: bold;
+        }
+        main .content {
+            display: block; /* Single-column layout */
+            padding-right: 20px;
+        }
+        main .content .text {
+            margin-top: 20px; /* Add margin to create space between text and header line */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        h2 {
+            text-align: center; /* Centered "Research" text */
+        }
+        quotestyle {
+            font-style: italic;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Added a container div for centering -->
+        <header>
+            <h1>ANDREW CHALMERS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="research.html"><b>Research</b></a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Add a horizontal line below the header -->
+        <hr style="border: none; border-top: 1px solid #333; margin: 0;">
+
+        <main>
+            <h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
+            <div class="content">
+                <!-- Add your research content here -->
+                <!-- Add any research-related images here -->
+                <img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
+                <h3>Publications</h3>
+
+                <h4 style="text-align: left;">2023</h4>
+                  <ul style="text-align: left;">
+                    <li>F. Zaman, C. Anslow, <b>A. Chalmers</b>, and T. Rhee, <quotestyle>"MRMAC: Mixed Reality Multi-User Asymmetric Collaboration"</quotestyle>, IEEE International Symposium on Mixed and Augmented Reality (ISMAR), October 2023.</li>
+
+                    <li>J. Zhao*, K. T. P Tran*, <b>A. Chalmers</b>, W. Khuan, R. Yao, A. Dey, J. Wilmot, J. Lin, M. Billinghurst, R. W. Lindeman, and T. Rhee, <quotestyle>"Deep Learning-based Simulator Sickness Estimation from 3D Motion"</quotestyle>, IEEE International Symposium on Mixed and Augmented Reality (ISMAR), October 2023 (*authors contributed equally).</li>
+
+                    <li>J. O'Hagan, <b>A. Chalmers</b>, and T. Rhee, <quotestyle>"Simulating the Geometric Growth of the Marine Sponge Crella Incrustans"</quotestyle>, IEEE VIS Short Paper, October 2023 [<a href="https://arxiv.org/abs/2308.00474" target="_blank">arXiv</a>].</li>
+
+                    <li>T. Rhee, <b>A. Chalmers</b>, F. Zaman, A. Stangnes, and V. Roberts, <quotestyle><a href="https://dl.acm.org/doi/10.1145/3588430.3597245" target="_blank">"Real-time Stage Modelling and Visual Effects for Live Performances"</a></quotestyle>, ACM SIGGRAPH 2023 Real-Time Live!, August 2023 (Audience Choice Award) [<a href="https://s2023.siggraph.org/presentation/?id=real_106&sess=sess258" target="_blank">event page</a>] [<a href="https://www.youtube.com/watch?si=70ogYvLqVqpJOfdD&v=OvC_Wwo6LXU&feature=youtu.be&ab_channel=CMICNZ" target="_blank">youtube</a>].</li>
+                    </ul>
+
+
+                <h4 style="text-align: left;">2022</h4>
+                    <ul style="text-align: left;">
+                        <li>J. Weir, J. Zhao, <b>A. Chalmers</b>, T. Rhee. <quotestyle>“Deep Portrait Delighting”</quotestyle>, European Conference on Computer Vision (ECCV), 2022.</li>
+                        <li>R. Chen, F. -L. Zhang, S. Finnie, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Casual 6-DoF: free-viewpoint panorama using a handheld 360° camera"</quotestyle>, IEEE Transactions on Visualization and Computer Graphics, 2022, presented at IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2022.</li>
+                        <li><b>A. Chalmers</b>, T. Zickler, T. Rhee, <quotestyle>"Illumination Browser: An intuitive representation for radiance map databases"</quotestyle>, Computers & Graphics, 2022. <a href="data/2022_IlluminationBrowser.pdf">[pdf]</a></li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2021</h4>
+                    <ul style="text-align: left;">
+                        <li>C. Suppan, <b>A. Chalmers</b>, J. Zhao, A. Doronin, T. Rhee. <quotestyle>"Neural Screen Space Rendering of Direct Illumination"</quotestyle>, Pacific Graphics, 2021 (best conference paper award).</li>
+                        <li>L. Petikam, <b>A. Chalmers</b>, K. Anjyo, T. Rhee. <quotestyle>"Art-directing Appearance using an Environment Map Latent Space"</quotestyle>, Pacific Graphics, 2021.</li>
+                        <li>J. Zhao, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Adaptive Light Estimation using Dynamic Filtering for Diverse Lighting Conditions"</quotestyle>, IEEE International Symposium on Mixed and Augmented Reality (ISMAR), IEEE Transactions on Visualization and Computer Graphics (TVCG), 2021. <a href="data/2021_LightEstimation.pdf">[pdf]</a></li>
+                        <li>F. Welsford-Ackroyd, <b>A. Chalmers</b>, R. dos Anjos, D. Medeiros, H. Kim, T. Rhee, <quotestyle>"Spectator View: Enabling Asymmetric Interaction between HMD Wearers and Spectators with a Large Display"</quotestyle>, ACM Interactive Surfaces and Spaces Conference (ISS), Proceedings of the ACM on Human-Computer Interaction (PACMHCI), 2021.</li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2020</h4>
+                    <ul style="text-align: left;">
+                        <li><b>A. Chalmers</b> and T. Rhee, <quotestyle>"Shadow-based Light Detection for HDR Environment Maps"</quotestyle>, IVCNZ, 2020.</li>
+                        <li><b>A. Chalmers</b>, J. Zhao, D. Medeiros, T. Rhee, <quotestyle>"Reconstructing Reflection Maps using a Stacked-CNN for Mixed Reality Rendering"</quotestyle>, IEEE Transactions on Visualization and Computer Graphics (TVCG), 2020, presented at IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2021. <a href="data/2020_ReflectionMapEstimation.pdf">[pdf]</a> <a href="data/2020_ReflectionMapEstimation-appendix.pdf">[appendix]</a></li>
+                        <li><b>A. Chalmers</b>, T. Zickler, T. Rhee, <quotestyle>"Illumination Space: A Feature Space for Radiance Maps"</quotestyle>, Pacific Graphics, 2020. <a href="data/2020_IlluminationSpace.pdf">[pdf]</a></li>
+                        <li>F. Welsford-Ackroyd, <b>A. Chalmers</b>, R. dos Anjos, D. Medeiros, H. Kim, T. Rhee, <quotestyle>"Asymmetric Interaction between HMD Wearers and Spectators with a Large Display"</quotestyle>, IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR), Poster, 2020.</li>
+                        <li>T. Rhee, S. Thompson, D. Medeiros, R. dos Anjos, <b>A. Chalmers</b>, <quotestyle>"Augmented Virtual Teleportation for High-Fidelity Telecollaboration"</quotestyle>, IEEE Virtual Reality and 3D User Interfaces (IEEE VR), IEEE Transactions on Visualization and Computer Graphics (TVCG), 2020.</li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2019</h4>
+                    <ul style="text-align: left;">
+                        <li>S. Thompson, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Real-Time Mixed Reality Rendering for Underwater 360° Videos"</quotestyle>, IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2019.</li>
+                        <li>S. Thompson, <b>A. Chalmers</b>, D. Medeiros, T. Rhee, <quotestyle>"Underwater Toolkit: Mixed Reality Object Blending for 360° Videos"</quotestyle>, IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Demo, 2019.</li>
+                        <li>S. Thompson, <b>A. Chalmers</b>, T. Rhee, <quotestyle>“Real-time Underwater Caustics for Mixed Reality 360° Videos”</quotestyle>, IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR), Poster, 2019.</li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2018</h4>
+                    <ul style="text-align: left;">
+                        <li>T. Rhee, <b>A. Chalmers</b>, M. Hicks, K. Kumagai, B. Allen, I. Loh, L. Petikam, K. Anjyo, <quotestyle>"MR360 interactive: playing with digital creatures in 360° videos"</quotestyle>, SIGGRAPH Asia 2018 Virtual & Augmented Reality, 2018 (2nd place award).</li>
+                        <li>C.J. Dean, J.P. Lewis, <b>A. Chalmers</b>, <quotestyle>"A magic wand for motion capture editing and edit propagation"</quotestyle>, SIGGRAPH Asia 2018 Technical Briefs, 2018.</li>
+                        <li>T. Rhee, <b>A. Chalmers</b>, I. Loh, B. Allen, L. Petikam, S. Thompson, T. Revill, <quotestyle>"Mixed reality 360 live: live blending of virtual objects into 360° streamed video"</quotestyle>, ACM SIGGRAPH 2018 Real-Time Live!, 2018.</li>
+                        <li>L. Petikam, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Visual Perception of Real World Depth Map Resolution for Mixed Reality"</quotestyle>, IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR), 2018.</li>
+                        <li><b>A. Chalmers</b>, <a href="https://researcharchive.vuw.ac.nz/xmlui/handle/10063/9100">"Illumination Space: A Feature Space for Radiance Maps"</a>, PhD Thesis, 2018. <a href="data/2018_AndrewChalmersThesis-compressed.pdf">[pdf-compressed]</a></li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2017</h4>
+                    <ul style="text-align: left;">
+                        <li>T. Rhee, L. Petikam, B. Allen, <b>A. Chalmers</b>, <quotestyle>"MR360: Mixed Reality Rendering for 360-degree Panoramic Videos"</quotestyle>, IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR), IEEE Transactions on Visualization and Computer Graphics (TVCG), 2017.</li>
+                        <li>N.A. Dodgson and <b>A. Chalmers</b>, <quotestyle>"Designing a computer graphics course for first year undergraduates"</quotestyle>, Eurographics, 2017.</li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2015</h4>
+                    <ul style="text-align: left;">
+                        <li>W. Ma, T. Iorns, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Synthesising Radiance Maps from Legacy Outdoor Photographs for Real-time IBL on HMDs"</quotestyle>, IVCNZ, 2015.</li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2014</h4>
+                    <ul style="text-align: left;">
+                        <li><b>A. Chalmers</b>, J. Choi, T. Rhee, <quotestyle>"Perceptually Optimised Illumination for Seamless Composites"</quotestyle>, Pacific Graphics, 2014.</li>
+                        <li><b>A. Chalmers</b>, J.P. Lewis, P. Hillman, C. Tait, T. Rhee, <quotestyle>"Sky Browser: Search for HDR Sky Maps"</quotestyle>, Pacific Graphics, 2014. <a href="data/2014_SkyBrowser.pdf" target="_blank">[pdf]</a></li>
+                    </ul>
+
+                    <h4 style="text-align: left;">2013</h4>
+                    <ul style="text-align: left;">
+                        <li><b>A. Chalmers</b>, J. Choi, T. Rhee, <quotestyle>"Perceptually Based Radiance Map for Realistic Composition"</quotestyle>, IVCNZ, 2013.</li>
+                    </ul>
+                </div>
+            </main>
+        </div> <!-- Close the container div -->
+    </body>
+</html>
