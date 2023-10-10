@@ -1,21 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>PDF Viewer</title>
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>PDF Viewer</h1>
+<html>
+<head>
+    <title>ANDREW CHALMERS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap">
+    <style>
+        /* Add some basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Set background color to white for the entire body */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add margin around the container */
+            background-color: #fff; /* Add a white background to the container */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a card effect */
+        }
+        header {
+            background-color: #fff; /* Add white background to the header */
+            color: #333; /* Change text color for better contrast */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically center content */
+            border-bottom: 1px solid #333; /* Add a horizontal line */
+            font-family: 'PT Sans Narrow', sans-serif; /* Apply PT Sans Narrow to the header */
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'PT Sans Narrow', sans-serif; /* Change the font family */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        /* Change tab text color to black and make it bold */
+        nav ul li a {
+            color: #000;
+            font-weight: normal;
+            text-decoration: none; /* Remove underlines */
+        }
+        /* Style for active tab */
+        nav ul li.active a {
+            font-weight: bold;
+        }
+        main .content {
+            display: block; /* Single-column layout */
+            padding-right: 20px;
+        }
+        main .content .text {
+            margin-top: 20px; /* Add margin to create space between text and header line */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        h2 {
+            text-align: center; /* Centered "Research" text */
+        }
+        quotestyle {
+            font-style: italic;
+            color: #555;
+        }
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+        .bullet-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px; /* Add margin to create spacing between items */
+        }
+        .bullet-point-text {
+            /*width: 400px;*/
+            text-align: left; 
+            font-size: 16px;
+        }
+        .pdf-canvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="pdf.js"></script>
+</head>
+<body>
+    <div class="container"> <!-- Added a container div for centering -->
+        <header>
+            <h1>ANDREW CHALMERS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="research.html"><b>Research</b></a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Add a horizontal line below the header -->
+        <hr style="border: none; border-top: 1px solid #333; margin: 0;">
 
-    <div class="controls">
-      <button id="previous" class="previous">&laquo; Previous</button>
-      <p id="pageNumber">Page 1 of 1</p>
-      <button id="next" class="next">Next &raquo;</button>
-    </div>
+        <main>
+            <h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
+            <div class="content">
+                <!-- Add your research content here -->
+                <!-- Add any research-related images here -->
+                <img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
+                <h3>Publications</h3>
 
-    <canvas id="canvas"></canvas>
 
-    <script src="app.js"></script>
-  </body>
+                     <h4 style="text-align: left;">2015</h4>
+                        <ul class="bullet-list">
+                            <li class="bullet-point" data-pdf-filename="data/dummy.pdf">
+                                <canvas class="pdf-canvas" width="100" height="100"></canvas>
+                                <div class="bullet-point-text">W. Ma, T. Iorns, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Synthesising Radiance Maps from Legacy Outdoor Photographs for Real-time IBL on HMDs"</quotestyle>, IVCNZ, 2015.</div>
+                            </li>
+                        </ul>
+                        
+                     <h4 style="text-align: left;">2014</h4>
+                        <ul class="bullet-list">
+                            <li class="bullet-point" data-pdf-filename="data/dummy.pdf">
+                                <canvas class="pdf-canvas" width="100" height="100"></canvas>
+                                <div class="bullet-point-text"><b>A. Chalmers</b>, J. Choi, T. Rhee, <quotestyle>"Perceptually Optimised Illumination for Seamless Composites"</quotestyle>, Pacific Graphics, 2014</div>
+                            </li>
+                            <li class="bullet-point" data-pdf-filename="data/2014_SkyBrowser.pdf">
+								<a class="pdf-link" href="data/2014_SkyBrowser.pdf" target="_blank"> <canvas class="pdf-canvas" width="100" height="100"></canvas></a>
+                                <div class="bullet-point-text"><b>A. Chalmers</b>, J.P. Lewis, P. Hillman, C. Tait, T. Rhee, <quotestyle>"Sky Browser: Search for HDR Sky Maps"</quotestyle>, Pacific Graphics, 2014 <a href="data/2014_SkyBrowser.pdf" target="_blank">[pdf]</a>.</div>
+                            </li>
+                        </ul>
+
+                     <h4 style="text-align: left;">2013</h4>
+                    <ul class="bullet-list">
+                      <li class="bullet-point" data-pdf-filename="data/dummy.pdf">
+                            <canvas class="pdf-canvas" width="100" height="100"></canvas>
+                            <div class="bullet-point-text"><b>A. Chalmers</b>, J. Choi, T. Rhee, <quotestyle>"Perceptually Based Radiance Map for Realistic Composition"</quotestyle>, IVCNZ, 2013.</div>
+                        </li>
+                    </ul>
+
+                </div>
+            </main>
+        </div> <!-- Close the container div -->
+
+    <script>
+        // Specify the workerSrc property
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "pdf.worker.js";
+
+        // Define the crop parameters
+        const cropX = 5;
+        const cropY = 40;
+        const offSetX = 0;
+        const offSetY = 10;
+        const cropWidth = 100;
+        const cropHeight = cropWidth*1.41;
+        const scale = 1.0;
+
+        // Load the PDF file for each bullet point
+        document.querySelectorAll(".bullet-point").forEach(bulletPoint => {
+            const pdfFileName = bulletPoint.dataset.pdfFilename; // Get the custom PDF file name from data attribute
+            const canvas = bulletPoint.querySelector(".pdf-canvas");
+
+            pdfjsLib.getDocument(pdfFileName).promise.then(pdfDocument => {
+                pdfDocument.getPage(1).then(page => {
+                    const ctx = canvas.getContext("2d");
+                    const viewport = page.getViewport({ scale });
+
+                    // Calculate the new canvas size based on the crop parameters
+                    const canvasWidth = cropWidth;
+                    const canvasHeight = (cropHeight / viewport.height) * viewport.height;
+
+                    // Set the canvas size
+                    canvas.width = canvasWidth - (cropX * 2);
+                    canvas.height = canvasHeight - (cropY * 2);
+
+                    // Adjust the render context to crop the specified region
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport,
+                        transform: [
+                            (canvasWidth / viewport.width) * 1, 0, 0,
+                            (canvasHeight / viewport.height) * 1, -cropX+offSetX, -cropY+offSetY
+                        ],
+                    };
+                    page.render(renderContext).promise.then(() => {
+                        // Cropped and zoomed PDF region with right crop is displayed
+                    });
+                });
+            });
+        });
+    </script>
+    </body>
 </html>
