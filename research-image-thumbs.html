@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ANDREW CHALMERS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap">
+    <style>
+        /* Add some basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Set background color to white for the entire body */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add margin around the container */
+            background-color: #fff; /* Add a white background to the container */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a card effect */
+        }
+        header {
+            background-color: #fff; /* Add white background to the header */
+            color: #333; /* Change text color for better contrast */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically center content */
+            border-bottom: 1px solid #333; /* Add a horizontal line */
+            font-family: 'PT Sans Narrow', sans-serif; /* Apply PT Sans Narrow to the header */
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'PT Sans Narrow', sans-serif; /* Change the font family */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        /* Change tab text color to black and make it bold */
+        nav ul li a {
+            color: #000;
+            font-weight: normal;
+            text-decoration: none; /* Remove underlines */
+        }
+        /* Style for active tab */
+        nav ul li.active a {
+            font-weight: bold;
+        }
+        main .content {
+            display: block; /* Single-column layout */
+            padding-right: 20px;
+        }
+        main .content .text {
+            margin-top: 20px; /* Add margin to create space between text and header line */
+        }
+
+        h2 {
+            text-align: center; /* Centered "Research" text */
+        }
+        quotestyle {
+            font-style: italic;
+            color: #555;
+        }
+        paper_title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgb(25, 100, 186);
+        }
+        paper_authors {
+            font-size: 1rem;
+            color: rgb(0, 0, 0);
+        }
+        paper_publisher {
+            font-size: 1rem;
+            font-style: italic;
+            color: rgb(0, 0, 0);
+        }
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+        .bullet-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px; /* Add margin to create spacing between items */
+        }
+        .bullet-point-text {
+            /*width: 400px;*/
+            text-align: left; 
+            font-size: 16px;
+        }
+        .pdf-canvas {
+            border: 1px solid #000;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .thumbnail {
+            float: left;
+            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px; /* Add rounded corners to the thumbnails */
+            border: 1px solid #ddd; /* Add a border to the thumbnails */
+        }
+
+        .thumbnail:hover {
+            border-color: #3498db; /* Change border color on hover */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow on hover */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Added a container div for centering -->
+        <header>
+            <h1>ANDREW CHALMERS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="research.html"><b>Research</b></a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Add a horizontal line below the header -->
+        <hr style="border: none; border-top: 1px solid #333; margin: 0;">
+
+        <main>
+            <h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
+            <div class="content">
+                <!-- Add your research content here -->
+                <!-- Add any research-related images here -->
+                <img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
+                <h2>Publications</h2>
+
+                <iframe src="output.html" width="100%" height="600px" frameborder="0"></iframe>
+
+
+            </main>
+        </div> <!-- Close the container div -->
+
+    </body>
+</html>

@@ -1,39 +1,69 @@
-<!-- ... (previous code) ... -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Publications</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-<h4 style="text-align: left;">2015</h4>
-<ul class="bullet-list">
-    <li class="bullet-point">
-        <a class="pdf-link" href="data/dummy.pdf" target="_blank" data-pdf-page="1"> <!-- Add data-pdf-page attribute to specify the page number -->
-            <canvas class="pdf-canvas" width="100" height="100"></canvas>
-        </a>
-        <div class="bullet-point-text">W. Ma, T. Iorns, <b>A. Chalmers</b>, T. Rhee, <quotestyle>"Synthesising Radiance Maps from Legacy Outdoor Photographs for Real-time IBL on HMDs"</quotestyle>, IVCNZ, 2015.</div>
+        li {
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .thumbnail {
+            float: left;
+            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px; /* Add rounded corners to the thumbnails */
+            border: 1px solid #ddd; /* Add a border to the thumbnails */
+        }
+
+        .thumbnail:hover {
+            border-color: #3498db; /* Change border color on hover */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow on hover */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Your Publications</h1>
+
+<ul>
+    <li>
+        <img class="thumbnail" src="./data/dummy_thumb.png" alt="Publication 1 Thumbnail">
+        <div>
+            <strong>Title:</strong> Publication Title 1<br>
+            <strong>Authors:</strong> Author 1, Author 2, ...<br>
+            <strong>Journal/Conference:</strong> Journal/Conference Name<br>
+            <strong>Year:</strong> Publication Year
+        </div>
     </li>
+
+    <li>
+        <img class="thumbnail" src="./data/dummy_thumb.png" alt="Publication 1 Thumbnail">
+        <div>
+            <strong>Title:</strong> Publication Title 2<br>
+            <strong>Authors:</strong> Author 1, Author 2, ...<br>
+        </div>
+    </li>
+
+    <li>
+        <img class="thumbnail" src="./data/dummy_thumb.png" alt="Publication 1 Thumbnail">
+        <div>
+            <strong>Title:</strong> Publication Title 3<br>
+            <strong>Authors:</strong> Author 1, Author 2, ...<br>
+            <strong>Journal/Conference:</strong> Journal/Conference Name<br>
+            <strong>Year:</strong> Publication Year
+        </div>
+    </li>
+    <!-- Add more items as needed -->
 </ul>
 
-<h4 style="text-align: left;">2014</h4>
-<ul class="bullet-list">
-    <li class="bullet-point">
-        <a class="pdf-link" href="data/dummy.pdf" target="_blank" data-pdf-page="2"> <!-- Add data-pdf-page attribute to specify the page number -->
-            <canvas class="pdf-canvas" width="100" height="100"></canvas>
-        </a>
-        <div class="bullet-point-text"><b>A. Chalmers</b>, J. Choi, T. Rhee, <quotestyle>"Perceptually Optimised Illumination for Seamless Composites"</quotestyle>, Pacific Graphics, 2014</div>
-    </li>
-    <li class="bullet-point">
-        <a class="pdf-link" href="data/2014_SkyBrowser.pdf" target="_blank" data-pdf-page="1"> <!-- Add data-pdf-page attribute to specify the page number -->
-            <canvas class="pdf-canvas" width="100" height="100"></canvas>
-        </a>
-        <div class="bullet-point-text"><b>A. Chalmers</b>, J.P. Lewis, P. Hillman, C. Tait, T. Rhee, <quotestyle>"Sky Browser: Search for HDR Sky Maps"</quotestyle>, Pacific Graphics, 2014 <a href="data/2014_SkyBrowser.pdf" target="_blank">[pdf]</a>.</div>
-    </li>
-</ul>
-
-<h4 style="text-align: left;">2013</h4>
-<ul class="bullet-list">
-    <li class="bullet-point">
-        <a class="pdf-link" href="data/dummy.pdf" target="_blank" data-pdf-page="3"> <!-- Add data-pdf-page attribute to specify the page number -->
-            <canvas class="pdf-canvas" width="100" height="100"></canvas>
-        </a>
-        <div class="bullet-point-text"><b>A. Chalmers</b>, J. Choi, T. Rhee, <quotestyle>"Perceptually Based Radiance Map for Realistic Composition"</quotestyle>, IVCNZ, 2013.</div>
-    </li>
-</ul>
-
-<!-- ... (remaining code) ... -->
+</body>
+</html>
