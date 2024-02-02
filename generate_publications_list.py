@@ -20,8 +20,13 @@ additional_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10
 													['Event Page', 'https://sa2022.siggraph.org/en/presentation/?id=real_107&sess=sess143'],
 													['Video', 'https://youtu.be/WoJE1uS8SAo?feature=shared']],
 							'suppan2021neural':[	['Best Conference Paper Award', '']],
-							'rhee2018mr360':[		['Second Place Award', '']],
-							'thompson2019real-caustics':[	['Poster', '']]
+							'welsford2021spectator':[['Video', 'https://www.youtube.com/watch?v=hmOa0vGOnYE&ab_channel=ACMSIGCHI']],
+							#'chalmers2020reconstructing':[['Video', 'https://www.youtube.com/watch?v=TahPGWyMY20&ab_channel=AndrewChalmers']],
+							'chalmers2022illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
+							'chalmers2020illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
+							'chalmers2018illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
+							'thompson2019real-caustics':[	['Poster', '']],
+							'rhee2018mr360':[		['Second Place Award', '']]
 						}
 
 
