@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ANDREW CHALMERS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap">
+    <style>
+        /* Add some basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Set background color to white for the entire body */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add margin around the container */
+            background-color: #fff; /* Add a white background to the container */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a card effect */
+        }
+        header {
+            background-color: #fff; /* Add white background to the header */
+            color: #333; /* Change text color for better contrast */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically center content */
+            border-bottom: 1px solid #333; /* Add a horizontal line */
+            font-family: 'PT Sans Narrow', sans-serif; /* Apply PT Sans Narrow to the header */
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'PT Sans Narrow', sans-serif; /* Change the font family */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        /* Change tab text color to black and make it bold */
+        nav ul li a {
+            color: #000;
+            font-weight: normal;
+            text-decoration: none; /* Remove underlines */
+        }
+        /* Style for active tab */
+        nav ul li.active a {
+            font-weight: bold;
+        }
+        main .content {
+            display: block; /* Single-column layout */
+            padding-right: 20px;
+        }
+        main .content .text {
+            margin-top: 20px; /* Add margin to create space between text and header line */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        h2 {
+            text-align: center; /* Centered "Research" text */
+        }
+        paper_title {
+            font-style: italic;
+            color: #555;
+        }
+        /* Style for the list */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Style for each list item */
+        li {
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for thumbnail image */
+        img {
+            width: 100px; /* Adjust as needed */
+            height: auto;
+            margin-right: 10px; /* Adjust spacing between image and text */
+            border-radius: 5px; /* Optional: add rounded corners */
+        }
+
+        /* Style for text */
+        .item-text {
+            margin-top: 0;
+        }
+
+    </style>
+    <script src="pdf.js"></script>
+</head>
+<body>
+    <div class="container"> <!-- Added a container div for centering -->
+        <header>
+            <h1>ANDREW CHALMERS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="research.html"><b>Research</b></a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Add a horizontal line below the header -->
+        <hr style="border: none; border-top: 1px solid #333; margin: 0;">
+
+        <main>
+            <h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
+            <div class="content">
+                <!-- Add your research content here -->
+                <!-- Add any research-related images here -->
+                <img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
+                <h2>Publications</h2>
+
+                <h3 style="text-align: left;">2024</h3>
+
+                <ul>
+                    <li>
+                        <img src="./thumbnails/2024_Avatar360-thumbnail.jpg" alt="Thumbnail 1">
+                        <div class="item-text">
+                            <b>A. Chalmers</b>, F. Zaman, and T. Rhee, <paper_title>"Avatar360: Emulating 6-DoF Perception in 360° Panoramas through Avatar-Assisted Navigation"</paper_title>, IEEE Virtual Reality and 3D User Interfaces (IEEE VR), 2024.
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./thumbnails/2024_Avatar360-thumbnail.jpg" alt="Thumbnail 2">
+                        <div class="item-text">
+                            <b>A. Chalmers</b>, F. Zaman, and T. Rhee, <paper_title>"Avatar360: Emulating 6-DoF Perception in 360° Panoramas through Avatar-Assisted Navigation"</paper_title>, IEEE Virtual Reality and 3D User Interfaces (IEEE VR), 2024.
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </main>
+    </div>
+    
+
+    </body>
+</html>

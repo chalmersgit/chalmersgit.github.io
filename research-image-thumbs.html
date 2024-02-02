@@ -1,161 +1,563 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ANDREW CHALMERS</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap">
-    <style>
-        /* Add some basic CSS for layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff; /* Set background color to white for the entire body */
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto; /* Center the container */
-            padding: 20px; /* Add margin around the container */
-            background-color: #fff; /* Add a white background to the container */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a card effect */
-        }
-        header {
-            background-color: #fff; /* Add white background to the header */
-            color: #333; /* Change text color for better contrast */
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Vertically center content */
-            border-bottom: 1px solid #333; /* Add a horizontal line */
-            font-family: 'PT Sans Narrow', sans-serif; /* Apply PT Sans Narrow to the header */
-        }
-        header h1 {
-            margin: 0;
-            font-family: 'PT Sans Narrow', sans-serif; /* Change the font family */
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-            padding-right: 20px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-            padding-right: 0;
-        }
-        /* Change tab text color to black and make it bold */
-        nav ul li a {
-            color: #000;
-            font-weight: normal;
-            text-decoration: none; /* Remove underlines */
-        }
-        /* Style for active tab */
-        nav ul li.active a {
-            font-weight: bold;
-        }
-        main .content {
-            display: block; /* Single-column layout */
-            padding-right: 20px;
-        }
-        main .content .text {
-            margin-top: 20px; /* Add margin to create space between text and header line */
-        }
+	<title>ANDREW CHALMERS</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap">
+	<style>
+		/* Add some basic CSS for layout */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #fff; /* Set background color to white for the entire body */
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto; /* Center the container */
+			padding: 20px; /* Add margin around the container */
+			background-color: #fff; /* Add a white background to the container */
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a card effect */
+		}
+		header {
+			background-color: #fff; /* Add white background to the header */
+			color: #333; /* Change text color for better contrast */
+			padding: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center; /* Vertically center content */
+			border-bottom: 1px solid #333; /* Add a horizontal line */
+			font-family: 'PT Sans Narrow', sans-serif; /* Apply PT Sans Narrow to the header */
+		}
+		header h1 {
+			margin: 0;
+			font-family: 'PT Sans Narrow', sans-serif; /* Change the font family */
+		}
+		nav ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		nav ul li {
+			display: inline;
+			margin-right: 20px;
+			padding-right: 20px;
+		}
+		nav ul li:last-child {
+			margin-right: 0;
+			padding-right: 0;
+		}
+		/* Change tab text color to black and make it bold */
+		nav ul li a {
+			color: #000;
+			font-weight: normal;
+			text-decoration: none; /* Remove underlines */
+		}
+		/* Style for active tab */
+		nav ul li.active a {
+			font-weight: bold;
+		}
+		main .content {
+			display: block; /* Single-column layout */
+			padding-right: 20px;
+		}
+		main .content .text {
+			margin-top: 20px; /* Add margin to create space between text and header line */
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		h2 {
+			text-align: center; /* Centered "Research" text */
+		}
 
-        h2 {
-            text-align: center; /* Centered "Research" text */
-        }
-        quotestyle {
-            font-style: italic;
-            color: #555;
-        }
-        paper_title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: rgb(25, 100, 186);
-        }
-        paper_authors {
-            font-size: 1rem;
-            color: rgb(0, 0, 0);
-        }
-        paper_publisher {
-            font-size: 1rem;
-            font-style: italic;
-            color: rgb(0, 0, 0);
-        }
-        .bullet-list {
-            list-style: none;
-            padding: 0;
-        }
-        .bullet-point {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px; /* Add margin to create spacing between items */
-        }
-        .bullet-point-text {
-            /*width: 400px;*/
-            text-align: left; 
-            font-size: 16px;
-        }
-        .pdf-canvas {
-            border: 1px solid #000;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+		paper_title {
+			font-weight: bold;
+			color: #2980b9;
+			font-size: 14px;
+		}
 
-        li {
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .thumbnail {
-            float: left;
-            margin-right: 10px;
-            width: 100px;
-            height: 100px;
-            border-radius: 5px; /* Add rounded corners to the thumbnails */
-            border: 1px solid #ddd; /* Add a border to the thumbnails */
-        }
+		paper_authors {
+			font-size: 12px;
+		}
 
-        .thumbnail:hover {
-            border-color: #3498db; /* Change border color on hover */
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow on hover */
-        }
+		paper_publisher {
+			font-size: 12px;
+		}
 
+		
 
-    </style>
+		/* Style for the list */
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		/* Style for each list item */
+		li {
+			margin-bottom: 20px;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+		}
+
+		/* Style for thumbnail image */
+		img {
+			width: 100px;
+			height: auto;
+			margin-right: 10px;
+			border: 1px solid black;
+			padding: 5px;
+			border-radius: 5px;
+		}
+
+		/* Style for text */
+		.item-text {
+			margin-top: 0;
+		}
+
+		/* Style for the button */
+		.button-main {
+		  padding: 1px 5px;
+		  font-size: 12px;
+		  background-color: #3498db; 
+		  color: #fff; 
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		}
+
+		/* Hover effect */
+		.button-main:hover {
+		  background-color: #2980b9; 
+		}
+
+		.button-video {
+		  padding: 1px 5px;
+		  font-size: 12px;
+		  background-color: #ff0000; 
+		  color: #fff; 
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		}
+
+		.button-video:hover {
+		  background-color: #cc0000; 
+		}
+
+		.button-award {
+		  padding: 1px 5px;
+		  font-size: 12px;
+		  background-color: #cca300; 
+		  color: #fff; 
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		}
+
+		/* Hover effect */
+		.button-award:hover {
+			background-color: #cca300;
+			cursor: auto; /* Explicitly set cursor to default arrow */
+		}
+
+	</style>
 </head>
 <body>
-    <div class="container"> <!-- Added a container div for centering -->
-        <header>
-            <h1>ANDREW CHALMERS</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="research.html"><b>Research</b></a></li>
-                </ul>
-            </nav>
-        </header>
-        <!-- Add a horizontal line below the header -->
-        <hr style="border: none; border-top: 1px solid #333; margin: 0;">
+	<div class="container"> <!-- Added a container div for centering -->
+		<header>
+			<h1>ANDREW CHALMERS</h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="research.html"><b>Research</b></a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Add a horizontal line below the header -->
+		<hr style="border: none; border-top: 1px solid #333; margin: 0;">
 
-        <main>
-            <h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
-            <div class="content">
-                <!-- Add your research content here -->
-                <!-- Add any research-related images here -->
-                <img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
-                <h2>Publications</h2>
+		<main>
+			<h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
+			<div class="content">
+				<!-- Add your research content here -->
+				<!-- Add any research-related images here -->
+				<img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
+				<h2>Publications</h2>
 
-                <iframe src="output.html" width="100%" height="600px" frameborder="0"></iframe>
+<h3 style="text-align: left;">2024</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/chalmers2024avatar360-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Avatar360: Emulating 6-DoF Perception in 360° Panoramas through Avatar-Assisted Navigation</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Zaman, Faisal and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Conference on Virtual Reality and 3D User Interfaces, 2024</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2024avatar360.pdf', '_blank')">PDF 27MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2024avatar360-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chen2024neural-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Neural Radiance Fields for Dynamic View Synthesis using Local Temporal Priors</paper_title><br>
+                <paper_authors>Chen, Rongsen and Zhao, Junhong and Zhang, Fang-Lue and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>International Conference on Computational Visual Media, 2024</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chen2024neural.pdf', '_blank')">PDF 43MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chen2024neural-compressed.pdf', '_blank')">PDF 4MB</button>
+            </div>
+          </li>
+        </ul>
 
+<h3 style="text-align: left;">2023</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/rhee2023real-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Real-time Stage Modelling and Visual Effects for Live Performances</paper_title><br>
+                <paper_authors>Rhee, Taehyun and <b>Chalmers, Andrew</b> and Zaman, Faisal and Stangnes, Anna and Roberts, Vic</paper_authors><br>
+                <paper_publisher>ACM SIGGRAPH Real-time Live!, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/rhee2023real.pdf', '_blank')">PDF 4MB</button>                <button class="button-main" onclick="window.open('https://dl.acm.org/doi/10.1145/3588430.3597245', '_blank')">DOI</button>
+                <button class="button-main" onclick="window.open('https://s2023.siggraph.org/presentation/?id=real_106&sess=sess258', '_blank')">Event Page</button>
+                <button class="button-video" onclick="window.open('https://youtu.be/OvC_Wwo6LXU?feature=shared', '_blank')">Video</button>
+                <button class="button-award"">Audience Choice Award</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2023real-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Real-time Auditorium Modeling and Visual Effects for Live Performances</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Zaman, Faisal and Stangnes, Anna and Finnie, Simon and Nguyen, Hong Son and Han, JungHyun and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>ACM SIGGRAPH Asia Real-time Live!, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2023real.pdf', '_blank')">PDF 1MB</button>                <button class="button-main" onclick="window.open('https://dl.acm.org/doi/10.1145/3610539.3630250', '_blank')">DOI</button>
+                <button class="button-main" onclick="window.open('https://asia.siggraph.org/2023/presentation/?id=real_110&sess=sess210', '_blank')">Event Page</button>
+                <button class="button-video" onclick="window.open('https://youtu.be/lcLjtdlc-7k?feature=shared', '_blank')">Video</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2023motion-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>A Motion-Simulation Platform to Generate Synthetic Motion Data for Computer Vision Tasks</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Zhao, Junhong and Khuan Hoh, Weng and Drown, James and Finnie, Simon and Yao, Richard and Lin, James and Wilmott, James and Dey, Arindam and Billinghurst, Mark and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>SIGGRAPH Asia Technical Communications, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2023motion.pdf', '_blank')">PDF 5MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/zaman2023mrmac-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>MRMAC: Mixed Reality Multi-user Asymmetric Collaboration</paper_title><br>
+                <paper_authors>Zaman, Faisal and Anslow, Craig and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE International Symposium on Mixed and Augmented Reality, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/zaman2023mrmac.pdf', '_blank')">PDF 8MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/zaman2023mrmac-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/zhao2023deep-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Deep Learning-based Simulator Sickness Estimation from 3D Motion</paper_title><br>
+                <paper_authors>Zhao, Junhong and Tran, Kien TP and <b>Chalmers, Andrew</b> and Hoh, Weng Khuan and Yao, Richard and Dey, Arindam and Wilmott, James and Lin, James and Billinghurst, Mark and Lindeman, Robert W and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE International Symposium on Mixed and Augmented Reality, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/zhao2023deep.pdf', '_blank')">PDF 15MB</button>                <button class="button-main" onclick="window.open('./papers/zhao2023deep-appendix.pdf', '_blank')">Appendix 7MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/o2023simulating-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Simulating the Geometric Growth of the Marine Sponge Crella Incrustans</paper_title><br>
+                <paper_authors>O’Hagan, Joshua and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Visualization and Visual Analytics, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/o2023simulating.pdf', '_blank')">PDF 9MB</button>                <button class="button-main" onclick="window.open('./papers/o2023simulating-appendix.pdf', '_blank')">Appendix 9MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/weir2023lighting-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>De-lighting Human Images Using Region-Specific Data Augmentation</paper_title><br>
+                <paper_authors>Weir, Joshua and Zhao, Junhong and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>38th International Conference on Image and Vision Computing New Zealand, 2023</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/weir2023lighting.pdf', '_blank')">PDF 15MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/weir2023lighting-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+        </ul>
 
-            </main>
-        </div> <!-- Close the container div -->
+<h3 style="text-align: left;">2022</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/chalmers2022illumination-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Illumination Browser: An intuitive representation for radiance map databases</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Zickler, Todd and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Computers & Graphics, 2022</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2022illumination.pdf', '_blank')">PDF 3MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2022illumination-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chen2022casual-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Casual 6-DoF: free-viewpoint panorama using a handheld 360 camera</paper_title><br>
+                <paper_authors>Chen, Rongsen and Zhang, Fang-Lue and Finnie, Simon and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Transactions on Visualization and Computer Graphics, 2022</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chen2022casual.pdf', '_blank')">PDF 11MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chen2022casual-compressed.pdf', '_blank')">PDF 4MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/weir2022deep-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Deep Portrait Delighting</paper_title><br>
+                <paper_authors>Weir, Joshua and Zhao, Junhong and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Proceedings Of the European Conference on Computer Vision, 2022</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/weir2022deep.pdf', '_blank')">PDF 9MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/weir2022deep-compressed.pdf', '_blank')">PDF 2MB</button>
+                <button class="button-main" onclick="window.open('./papers/weir2022deep-appendix.pdf', '_blank')">Appendix 2MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/rhee2022teleport-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Teleport to the Augmented Real-World with Live Interactive Effects (IFX)</paper_title><br>
+                <paper_authors>Rhee, Taehyun and <b>Chalmers, Andrew</b> and Hoh, Weng Khuan and Roberts, Richard and Butcher, Warren and Finnie, Simon and Barrett, Rose</paper_authors><br>
+                <paper_publisher>Proceedings Of the SIGGRAPH Asia Real-time Live!, 2022</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/rhee2022teleport.pdf', '_blank')">PDF 1MB</button>                <button class="button-main" onclick="window.open('https://dl.acm.org/doi/10.1145/3550453.3570123', '_blank')">DOI</button>
+                <button class="button-main" onclick="window.open('https://sa2022.siggraph.org/en/presentation/?id=real_107&sess=sess143', '_blank')">Event Page</button>
+                <button class="button-video" onclick="window.open('https://youtu.be/WoJE1uS8SAo?feature=shared', '_blank')">Video</button>
+            </div>
+          </li>
+        </ul>
 
-    </body>
+<h3 style="text-align: left;">2021</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/suppan2021neural-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Neural Screen Space Rendering of Direct Illumination</paper_title><br>
+                <paper_authors>Suppan, Christian and <b>Chalmers, Andrew</b> and Zhao, Junhong and Doronin, Alex and Rhee, Taehyun and Lee, SH and Zollmann, S and Okabe, M and Wu</paper_authors><br>
+                <paper_publisher>Pacific Graphics Short Papers, Posters, and Work-in-progress Papers, 2021</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/suppan2021neural.pdf', '_blank')">PDF 5MB</button>                <button class="button-award"">Best Conference Paper Award</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/petikam2021art-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Art-directing Appearance using an Environment Map Latent Space</paper_title><br>
+                <paper_authors>Petikam, Lohit and <b>Chalmers, Andrew</b> and Anjyo, Ken and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Pacific Graphics Short Papers, Posters, and Work-in-progress Papers, 2021</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/petikam2021art.pdf', '_blank')">PDF 20MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/petikam2021art-compressed.pdf', '_blank')">PDF 3MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/zhao2021adaptive-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Adaptive light estimation using dynamic filtering for diverse lighting conditions</paper_title><br>
+                <paper_authors>Zhao, Junhong and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Transactions on Visualization and Computer Graphics, 2021</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/zhao2021adaptive.pdf', '_blank')">PDF 8MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/zhao2021adaptive-compressed.pdf', '_blank')">PDF 3MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/welsford2021spectator-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Spectator view: Enabling asymmetric interaction between hmd wearers and spectators with a large display</paper_title><br>
+                <paper_authors>Welsford-Ackroyd, Finn and <b>Chalmers, Andrew</b> and Kuffner dos Anjos, Rafael and Medeiros, Daniel and Kim, Hyejin and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Proceedings Of the ACM on Human-computer Interaction, 2021</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/welsford2021spectator.pdf', '_blank')">PDF 6MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/welsford2021spectator-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2020</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/welsford2020asymmetric-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Asymmetric interaction between hmd wearers and spectators with a large display</paper_title><br>
+                <paper_authors>Welsford-Ackroyd, Finn and <b>Chalmers, Andrew</b> and dos Anjos, Rafael K and Medeiros, Daniel and Kim, Hyejin and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops, 2020</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/welsford2020asymmetric.pdf', '_blank')">PDF 1MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/rhee2020augmented-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Augmented virtual teleportation for high-fidelity telecollaboration</paper_title><br>
+                <paper_authors>Rhee, Taehyun and Thompson, Stephen and Medeiros, Daniel and Dos Anjos, Rafael and <b>Chalmers, Andrew</b></paper_authors><br>
+                <paper_publisher>IEEE Transactions on Visualization and Computer Graphics, 2020</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/rhee2020augmented.pdf', '_blank')">PDF 4MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2020reconstructing-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Reconstructing reflection maps using a stacked-CNN for mixed reality rendering</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Zhao, Junhong and Medeiros, Daniel and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Transactions on Visualization and Computer Graphics, 2020</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2020reconstructing.pdf', '_blank')">PDF 19MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2020reconstructing-compressed.pdf', '_blank')">PDF 2MB</button>
+                <button class="button-main" onclick="window.open('./papers/chalmers2020reconstructing-appendix.pdf', '_blank')">Appendix 1MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2020shadow-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Shadow-based Light Detection for HDR Environment Maps</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>35th International Conference on Image and Vision Computing New Zealand, 2020</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2020shadow.pdf', '_blank')">PDF 1MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2020illumination-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Illumination Space: A Feature Space for Radiance Maps</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Zickler, Todd and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Pacific Graphics Short Papers, Posters, and Work-in-progress Papers, 2020</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2020illumination.pdf', '_blank')">PDF 10MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2020illumination-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2019</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/thompson2019real-caustics-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Real-time underwater caustics for mixed reality 360° videos</paper_title><br>
+                <paper_authors>Thompson, Stephen and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE Conference on Virtual Reality and 3D User Interfaces (Poster), 2019</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/thompson2019real-caustics.pdf', '_blank')">PDF 2MB</button>                <button class="button-main" onclick="window.open('./papers/thompson2019real-caustics-poster.pdf', '_blank')">Poster</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/thompson2019real-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Real-time mixed reality rendering for underwater 360 videos</paper_title><br>
+                <paper_authors>Thompson, Stephen and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE International Symposium on Mixed and Augmented Reality, 2019</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/thompson2019real.pdf', '_blank')">PDF 7MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/thompson2019real-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/thompson2019underwater-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Underwater Toolkit: Mixed Reality Object Blending for 360° Videos</paper_title><br>
+                <paper_authors>Thompson, Stephen and <b>Chalmers, Andrew</b> and Medeiros, Daniel and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>IEEE International Symposium on Mixed and Augmented Reality, 2019</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/thompson2019underwater.pdf', '_blank')">PDF 3MB</button>            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2018</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/petikam2018visual-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Visual perception of real world depth map resolution for mixed reality rendering</paper_title><br>
+                <paper_authors>Petikam, Lohit and <b>Chalmers, Andrew</b> and Rhee, Taeyhun</paper_authors><br>
+                <paper_publisher>IEEE Conference on Virtual Reality and 3D User Interfaces, 2018</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/petikam2018visual.pdf', '_blank')">PDF 17MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/petikam2018visual-compressed.pdf', '_blank')">PDF 4MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/rhee2018mixed-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Mixed reality 360 live: live blending of virtual objects into 360° streamed video</paper_title><br>
+                <paper_authors>Rhee, Taehyun and <b>Chalmers, Andrew</b> and Loh, Ian and Allen, Ben and Petikam, Lohit and Thompson, Stephen and Revill, Tom</paper_authors><br>
+                <paper_publisher>ACM SIGGRAPH Real-time Live!, 2018</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/rhee2018mixed.pdf', '_blank')">PDF 1MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/rhee2018mr360-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Mr360 interactive: playing with digital creatures in 360 videos</paper_title><br>
+                <paper_authors>Rhee, Taehyun and <b>Chalmers, Andrew</b> and Hicks, Matthew and Kumagai, Kazuki and Allen, Ben and Loh, Ian and Petikam, Lohit and Anjyo, Ken</paper_authors><br>
+                <paper_publisher>SIGGRAPH Asia Virtual & Augmented Reality, 2018</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/rhee2018mr360.pdf', '_blank')">PDF 4MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/rhee2018mr360-compressed.pdf', '_blank')">PDF 2MB</button>
+                <button class="button-award"">Second Place Award</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/dean2018magic-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>A magic wand for motion capture editing and edit propagation</paper_title><br>
+                <paper_authors>Dean, Christopher J and Lewis, JP and <b>Chalmers, Andrew</b></paper_authors><br>
+                <paper_publisher>SIGGRAPH Asia Technical Briefs, 2018</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/dean2018magic.pdf', '_blank')">PDF 2MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2018illumination-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Illumination Space: A Feature Space for Radiance Maps</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b></paper_authors><br>
+                <paper_publisher>Phd Thesis, 2018</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2018illumination.pdf', '_blank')">PDF 79MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2018illumination-compressed.pdf', '_blank')">PDF 15MB</button>
+            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2017</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/rhee2017mr360-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Mr360: Mixed reality rendering for 360 panoramic videos</paper_title><br>
+                <paper_authors>Rhee, Taehyun and Petikam, Lohit and Allen, Benjamin and <b>Chalmers, Andrew</b></paper_authors><br>
+                <paper_publisher>IEEE Transactions on Visualization and Computer Graphics, 2017</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/rhee2017mr360.pdf', '_blank')">PDF 7MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/rhee2017mr360-compressed.pdf', '_blank')">PDF 4MB</button>
+            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/dodgson2017designing-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Designing a Computer Graphics Course for First Year Undergraduates.</paper_title><br>
+                <paper_authors>Dodgson, Neil A and <b>Chalmers, Andrew</b></paper_authors><br>
+                <paper_publisher>Eurographics, 2017</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/dodgson2017designing.pdf', '_blank')">PDF 1MB</button>            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2015</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/ma2015synthesising-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Synthesising radiance maps from legacy outdoor photographs for real-time IBL on HMDs</paper_title><br>
+                <paper_authors>Ma, Wan-Duo Kurt and Iorns, Thomas and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>International Conference on Image and Vision Computing New Zealand, 2015</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/ma2015synthesising.pdf', '_blank')">PDF 5MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/ma2015synthesising-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2014</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/chalmers2014perceptually-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Perceptually Optimised Illumination for Seamless Composites.</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Choi, Jong Jin and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Pacific Graphics, 2014</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2014perceptually.pdf', '_blank')">PDF 3MB</button>            </div>
+          </li>
+          <li>
+            <img src="./thumbnails/chalmers2014sky-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Sky Browser: Search for HDR Sky Maps.</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Lewis, John and Hillman, Peter and Tait, Charlie and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>Pacific Graphics, 2014</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2014sky.pdf', '_blank')">PDF 9MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2014sky-compressed.pdf', '_blank')">PDF 2MB</button>
+            </div>
+          </li>
+        </ul>
+
+<h3 style="text-align: left;">2013</h3>
+        <ul>
+          <li>
+            <img src="./thumbnails/chalmers2013perceptually-thumbnail.jpg" alt="Thumbnail">
+            <div class="item-text">
+                <paper_title>Perceptually based radiance map for realistic composition</paper_title><br>
+                <paper_authors><b>Chalmers, Andrew</b> and Choi, Jong Jin and Rhee, Taehyun</paper_authors><br>
+                <paper_publisher>28th International Conference on Image and Vision Computing New Zealand, 2013</paper_publisher><br>
+                <button class="button-main" onclick="window.open('./papers/chalmers2013perceptually.pdf', '_blank')">PDF 3MB</button>            </div>
+          </li>
+        </ul>
+
+			</main>
+		</div>
+
+	</body>
 </html>
