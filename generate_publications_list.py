@@ -286,6 +286,8 @@ def convert_to_html_list(entries):
 			entry_key = entry_key+'-caustics'
 			publisher += ' (Poster)'
 
+		title = refine_html_title(title)
+
 		link_thumbnail = './thumbnails/'+entry_key+'-thumbnail.jpg'
 
 		link_pdf = './papers/'+entry_key+'.pdf'
@@ -354,6 +356,35 @@ def refine_html(html_list):
 
 	return html_list
 
+def capitalize_string(x):
+	connecting_words = ["a", "an", "on", "the", "and", "of", "to", "for", "in", "through", "using", "from"]
+	words = x.split()
+	updated_words = [word if word.isupper() else word.capitalize() if word.lower() not in connecting_words or i == 0 else word.lower() for i, word in enumerate(words)]
+	x = ' '.join(updated_words)
+	
+	capitalize_after_chars = ['-', ':']
+	x_list = list(x)
+	for c in capitalize_after_chars:
+		indices = [index for index, char in enumerate(x_list) if char == c]
+		for idx in indices:
+			if idx<len(x) and idx>=0:
+				if x_list[idx+1]==' ':
+					x_list[idx+2] = x_list[idx+2].upper()
+				else:
+					x_list[idx+1] = x_list[idx+1].upper()
+	x = ''.join(x_list)
+	return x.strip()
+
+def refine_html_title(title_info):
+	title_info = capitalize_string(title_info)
+	title_info = title_info.replace("Mr360", "MR360")
+	title_info = title_info.replace("dof", "DoF")
+	title_info = title_info.replace("Hmd", "HMD")
+
+	if title_info[-1]=='.':
+		title_info = title_info[:-1]
+	return title_info
+
 def refine_html_journal(journal_info):
 	# Define a regular expression pattern to match four consecutive digits
 	digit_pattern = re.compile(r'\d{4}')
@@ -373,15 +404,7 @@ def refine_html_journal(journal_info):
 	# Remove any double white spaces
 	output_string = re.sub(r'\s+', ' ', output_string)
 
-	# Capitalize the first letter of each word except for connecting words
-	connecting_words = ["on", "the", "and"]
-	words = output_string.split()
-	updated_words = [word if word.isupper() else word.capitalize() if word.lower() not in connecting_words else word for word in words]
-
-	# Join the words back into a string
-	output_string = ' '.join(updated_words)
-
-	return output_string.strip()
+	return capitalize_string(output_string)
 
 
 if __name__ == "__main__":
