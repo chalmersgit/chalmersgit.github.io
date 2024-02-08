@@ -266,7 +266,8 @@ def convert_to_html_list(entries):
 				<h2>Publications</h2>
 """
 
-	# TODO BIBTEX copy/paste, URL links like YouTube
+	# TODO add bibtex entry for copy/paste
+	
 	current_year = None
 	for entry in entries:
 		entry_key = entry.get('entry_key', 'Unknown')
@@ -281,10 +282,7 @@ def convert_to_html_list(entries):
 		title = entry.get('title', 'Unknown Title')
 		publisher = refine_html_journal(entry.get('booktitle', entry.get('journal', 'Misc.')))
 
-		# Special case, paper has same ID as the poster
-		if title=='Real-time underwater caustics for mixed reality 360° videos':
-			entry_key = entry_key+'-caustics'
-			publisher += ' (Poster)'
+		entry_key, publisher = handle_special_cases(title, entry_key, publisher)
 
 		title = refine_html_title(title)
 
@@ -375,12 +373,18 @@ def capitalize_string(x):
 	x = ''.join(x_list)
 	return x.strip()
 
+def handle_special_cases(title, entry_key, publisher):
+	# Special case, paper has same ID as the poster
+	if title=='Real-time underwater caustics for mixed reality 360° videos':
+		entry_key = entry_key+'-caustics'
+		publisher += ' (Poster)'
+	return entry_key, publisher
+
 def refine_html_title(title_info):
 	title_info = capitalize_string(title_info)
 	title_info = title_info.replace("Mr360", "MR360")
 	title_info = title_info.replace("dof", "DoF")
 	title_info = title_info.replace("Hmd", "HMD")
-
 	if title_info[-1]=='.':
 		title_info = title_info[:-1]
 	return title_info
