@@ -41,7 +41,9 @@ cases = {	'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
 			'dean2018magic':(3,((0.65,0.05),(0.2,0.4))),
 			'rhee2017mr360':(0,((0.13,0.26),(0.2,0.24))),
 			'dodgson2017designing':(3,((0.1,0.5),(0.35,0.4))),
-			'ma2015synthesising':(5,((0.54,0.63),(0.18,0.3)))
+			'ma2015synthesising':(5,((0.54,0.63),(0.18,0.3))),
+			'chalmers2014perceptually':(0,((0.25,0.695),(0.2,0.25))),
+			'chalmers2014sky':(0,((0.48,0.1),(0.15,0.27)))
 		}
 
 def remove_whitespace(image_array):
