@@ -131,10 +131,10 @@ def compress_folder():
 
     print("PDF Files in Subfolder:")
     delete_compressed = False
-    compression_level = 2
+    compression_level = 1
     count = 1
     for pdf_file in pdf_files_list:
-        print(count,'/',numPDFs)
+        print(count,'/',numPDFs,':', pdf_file)
         if 'compressed.pdf' in pdf_file:
             print("File is already compressed:", pdf_file)
             #print(pdf_file)
