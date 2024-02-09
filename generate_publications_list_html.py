@@ -342,11 +342,14 @@ def convert_to_html_list(entries):
 
 	return html_list
 
+def replace_substring_ignore_case(original_string, old_substring, new_substring):
+	return re.sub(re.escape(old_substring), new_substring, original_string, flags=re.IGNORECASE)
+
 def refine_html(html_list):
 	html_list = html_list.replace("Chalmers, Andrew", "<b>Chalmers, Andrew</b>")
 	html_list = html_list.replace("\\&", "&")
 	html_list = html_list.replace("Rhee, Tae Hyun", "Rhee, Taehyun")
-	html_list = html_list.replace("Pacific Graphics Short Papers, Posters, and Work-in-Progress Papers", "Pacific Graphics (Short Papers)")
+	html_list = replace_substring_ignore_case(html_list, "Pacific Graphics Short Papers, Posters, and Work-in-Progress Papers", "Pacific Graphics (Short Papers)")
 	html_list = html_list.replace("PG (Short Papers)", "Pacific Graphics")
 	html_list = html_list.replace("PG", "Pacific Graphics")
 	html_list = html_list.replace("and others", "and Rhee, Taehyun")
