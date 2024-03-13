@@ -145,8 +145,22 @@ def convert_to_html_list(entries):
 			max-width: 100%;
 			height: auto;
 		}
+
 		h2 {
-			text-align: center; /* Centered "Research" text */
+		  text-align: center;
+		  position: relative;
+		}
+
+		h2::after {
+		  content: '';
+		  display: block;
+		  position: absolute;
+		  bottom: 0;
+		  left: 50%;
+		  width: 100%;
+		  transform: translateX(-50%);
+		  height: 1px;
+		  background-color: #333; 
 		}
 
 		paper_title {
