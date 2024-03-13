@@ -26,7 +26,8 @@ additional_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10
 							'chalmers2020illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
 							'chalmers2018illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
 							'thompson2019real-caustics':[	['Poster', '']],
-							'rhee2018mr360':[		['Second Place Award', '']]
+							'rhee2018mr360':[		['Second Place Award', '']],
+							'chen2024neural':[		['Poster', '']]
 						}
 
 
