@@ -293,6 +293,7 @@ def convert_to_html_list(entries):
 			html_list += f"\n<h3 style=\"text-align: left;\">{year}</h3>\n"
 			html_list += "        <ul>\n"
 			current_year = year
+			print(current_year)
 
 		title = entry.get('title', 'Unknown Title')
 		publisher = refine_html_journal(entry.get('booktitle', entry.get('journal', 'Misc.')))
