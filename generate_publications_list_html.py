@@ -438,7 +438,8 @@ if __name__ == "__main__":
 
 	html_list = convert_to_html_list(entries)
 
-	with open("research.html", "w", encoding="utf-8") as output_file:
+	output_html_filename = "research.html" 
+	with open(output_html_filename, "w", encoding="utf-8") as output_file:
 		output_file.write(html_list)
 
-	print("Conversion complete. HTML list saved to output.html")
+	print("Conversion complete. HTML list saved to "+output_html_filename)

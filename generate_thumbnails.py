@@ -6,7 +6,7 @@ import numpy as np
 import sys
 import os
 
-# crop_params = top left corner, and size, expressed as ratio
+# crop_params = top left corner, and size, expressed as ratio of the page size
 
 cases = {	'chalmers2024avatar360':(4,((0.08,0.51),(0.099,0.099))), #'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
 			'chen2024neural':(4,((0.15,0.05),(0.45,0.8))),
@@ -20,6 +20,7 @@ cases = {	'chalmers2024avatar360':(4,((0.08,0.51),(0.099,0.099))), #'chalmers202
 			'chalmers2022illumination':(1,((0.08,0.15),(0.4,0.7))),
 			'chen2022casual':(1,((0.05,0.05),(0.17,0.25))),
 			'weir2022deep':(1,((0.15,0.345),(0.2,0.2))),
+			'weir2024full':(1,((0.15,0.3),(0.3,0.23))),
 			'rhee2022teleport':(0,((0.34,0.61),(0.15,0.18))),
 			'zhao2021adaptive':(0,((0.17,0.125),(0.13,0.25))),
 			'suppan2021neural':(1,((0.11,0.7),(0.18,0.18))),
