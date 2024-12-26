@@ -27,7 +27,8 @@ additional_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10
 							'chalmers2018illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
 							'thompson2019real-caustics':[	['Poster', '']],
 							'rhee2018mr360':[		['Second Place Award', '']],
-							'chen2024neural':[		['Poster', '']]
+							'chen2024neural':[		['Poster', '']],
+							'weir2024full':[		['Poster', ''], ['Slides', '']]
 						}
 
 
@@ -74,7 +75,7 @@ def parse_bib_file(file_path):
 	return entries
 
 def convert_to_html_list(entries):
-	entries.sort(key=lambda x: x.get('year', 0), reverse=True)
+	entries.sort(key=lambda x: int(x.get('year', 0)), reverse=True)
 
 	html_list = """
 <!DOCTYPE html>
@@ -334,6 +335,8 @@ def convert_to_html_list(entries):
 					button_style = "button-video"
 				elif item[0]=='Poster':
 					item[1] = './papers/'+entry_key+'-poster.pdf'
+				elif item[0]=='Slides':
+					item[1] = './slides/'+entry_key+'.pptx'
 				elif 'Award' in item[0]:
 					button_style = "button-award"
 
