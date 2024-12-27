@@ -222,12 +222,11 @@ def convert_to_html_list(entries):
 		  cursor: pointer;
 		}
 
-		/* Hover effect */
 		.button-main:hover {
 		  background-color: #2980b9; 
 		}
 
-		.button-video {
+		.button-other {
 		  padding: 1px 5px;
 		  font-size: 12px;
 		  background-color: #ff0000; 
@@ -237,7 +236,7 @@ def convert_to_html_list(entries):
 		  cursor: pointer;
 		}
 
-		.button-video:hover {
+		.button-other:hover {
 		  background-color: #cc0000; 
 		}
 
@@ -251,7 +250,6 @@ def convert_to_html_list(entries):
 		  cursor: pointer;
 		}
 
-		/* Hover effect */
 		.button-award:hover {
 			background-color: #cca300;
 			cursor: auto; /* Explicitly set cursor to default arrow */
@@ -332,10 +330,12 @@ def convert_to_html_list(entries):
 			for item in additional_info:
 				button_style = "button-main"
 				if item[0]=='Video':
-					button_style = "button-video"
+					button_style = "button-other"
 				elif item[0]=='Poster':
+					button_style = "button-other"
 					item[1] = './papers/'+entry_key+'-poster.pdf'
 				elif item[0]=='Slides':
+					button_style = "button-other"
 					item[1] = './slides/'+entry_key+'.pptx'
 				elif 'Award' in item[0]:
 					button_style = "button-award"
