@@ -76,7 +76,7 @@ def parse_bib_file(file_path):
 
 def convert_to_html_list(entries):
 	entries.sort(key=lambda x: int(x.get('year', 0)), reverse=True)
-
+	
 	html_list = """
 <!DOCTYPE html>
 <html>
