@@ -143,23 +143,22 @@
 		  cursor: pointer;
 		}
 
-		/* Hover effect */
 		.button-main:hover {
 		  background-color: #2980b9; 
 		}
 
-		.button-video {
+		.button-other {
 		  padding: 1px 5px;
 		  font-size: 12px;
-		  background-color: #ff0000; 
+		  background-color: #cf7f30; 
 		  color: #fff; 
 		  border: none;
 		  border-radius: 5px;
 		  cursor: pointer;
 		}
 
-		.button-video:hover {
-		  background-color: #cc0000; 
+		.button-other:hover {
+		  background-color: #b97129; 
 		}
 
 		.button-award {
@@ -172,7 +171,6 @@
 		  cursor: pointer;
 		}
 
-		/* Hover effect */
 		.button-award:hover {
 			background-color: #cca300;
 			cursor: auto; /* Explicitly set cursor to default arrow */
@@ -220,7 +218,7 @@
                 <paper_authors>Chen, Rongsen and Zhao, Junhong and Zhang, Fang-Lue and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>International Conference on Computational Visual Media, 2024</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/chen2024neural.pdf', '_blank')">PDF 43MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chen2024neural-compressed.pdf', '_blank')">PDF 5MB</button>
-                <button class="button-main" onclick="window.open('./papers/chen2024neural-poster.pdf', '_blank')">Poster</button>
+                <button class="button-other" onclick="window.open('./papers/chen2024neural-poster.pdf', '_blank')">Poster</button>
             </div>
           </li>
           <li>
@@ -230,8 +228,8 @@
                 <paper_authors>Weir, Joshua and Zhao, Junhong and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>Proceedings of the Asian Conference on Computer Vision, 2024</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/weir2024full.pdf', '_blank')">PDF 9MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/weir2024full-compressed.pdf', '_blank')">PDF 5MB</button>
-                <button class="button-main" onclick="window.open('./papers/weir2024full-poster.pdf', '_blank')">Poster</button>
-                <button class="button-main" onclick="window.open('./slides/weir2024full.pptx', '_blank')">Slides</button>
+                <button class="button-other" onclick="window.open('./papers/weir2024full-poster.pdf', '_blank')">Poster</button>
+                <button class="button-other" onclick="window.open('./slides/weir2024full.pptx', '_blank')">Slides</button>
             </div>
           </li>
         </ul>
@@ -244,9 +242,9 @@
                 <paper_title>Real-Time Stage Modelling and Visual Effects for Live Performances</paper_title><br>
                 <paper_authors>Rhee, Taehyun and <b>Chalmers, Andrew</b> and Zaman, Faisal and Stangnes, Anna and Roberts, Vic</paper_authors><br>
                 <paper_publisher>ACM SIGGRAPH Real-Time Live!, 2023</paper_publisher><br>
-                <button class="button-main" onclick="window.open('./papers/rhee2023real.pdf', '_blank')">PDF 4MB</button>                <button class="button-main" onclick="window.open('https://dl.acm.org/doi/10.1145/3588430.3597245', '_blank')">DOI</button>
-                <button class="button-main" onclick="window.open('https://s2023.siggraph.org/presentation/?id=real_106&sess=sess258', '_blank')">Event Page</button>
-                <button class="button-video" onclick="window.open('https://youtu.be/OvC_Wwo6LXU?feature=shared', '_blank')">Video</button>
+                <button class="button-main" onclick="window.open('./papers/rhee2023real.pdf', '_blank')">PDF 4MB</button>                <button class="button-other" onclick="window.open('https://dl.acm.org/doi/10.1145/3588430.3597245', '_blank')">DOI</button>
+                <button class="button-other" onclick="window.open('https://s2023.siggraph.org/presentation/?id=real_106&sess=sess258', '_blank')">Event Page</button>
+                <button class="button-other" onclick="window.open('https://youtu.be/OvC_Wwo6LXU?feature=shared', '_blank')">Video</button>
                 <button class="button-award"">Audience Choice Award</button>
             </div>
           </li>
@@ -256,9 +254,9 @@
                 <paper_title>Real-Time Auditorium Modeling and Visual Effects for Live Performances</paper_title><br>
                 <paper_authors><b>Chalmers, Andrew</b> and Zaman, Faisal and Stangnes, Anna and Finnie, Simon and Nguyen, Hong Son and Han, JungHyun and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>ACM SIGGRAPH Asia Real-Time Live!, 2023</paper_publisher><br>
-                <button class="button-main" onclick="window.open('./papers/chalmers2023real.pdf', '_blank')">PDF 1MB</button>                <button class="button-main" onclick="window.open('https://dl.acm.org/doi/10.1145/3610539.3630250', '_blank')">DOI</button>
-                <button class="button-main" onclick="window.open('https://asia.siggraph.org/2023/presentation/?id=real_110&sess=sess210', '_blank')">Event Page</button>
-                <button class="button-video" onclick="window.open('https://youtu.be/lcLjtdlc-7k?feature=shared', '_blank')">Video</button>
+                <button class="button-main" onclick="window.open('./papers/chalmers2023real.pdf', '_blank')">PDF 1MB</button>                <button class="button-other" onclick="window.open('https://dl.acm.org/doi/10.1145/3610539.3630250', '_blank')">DOI</button>
+                <button class="button-other" onclick="window.open('https://asia.siggraph.org/2023/presentation/?id=real_110&sess=sess210', '_blank')">Event Page</button>
+                <button class="button-other" onclick="window.open('https://youtu.be/lcLjtdlc-7k?feature=shared', '_blank')">Video</button>
             </div>
           </li>
           <li>
@@ -284,7 +282,7 @@
                 <paper_title>Deep Learning-Based Simulator Sickness Estimation from 3D Motion</paper_title><br>
                 <paper_authors>Zhao, Junhong and Tran, Kien TP and <b>Chalmers, Andrew</b> and Hoh, Weng Khuan and Yao, Richard and Dey, Arindam and Wilmott, James and Lin, James and Billinghurst, Mark and Lindeman, Robert W and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>IEEE International Symposium on Mixed and Augmented Reality, 2023</paper_publisher><br>
-                <button class="button-main" onclick="window.open('./papers/zhao2023deep.pdf', '_blank')">PDF 15MB</button>                <button class="button-main" onclick="window.open('./papers/zhao2023deep-appendix.pdf', '_blank')">Appendix 7MB</button>
+                <button class="button-main" onclick="window.open('./papers/zhao2023deep.pdf', '_blank')">PDF 15MB</button>                <button class="button-other" onclick="window.open('./papers/zhao2023deep-appendix.pdf', '_blank')">Appendix 7MB</button>
             </div>
           </li>
           <li>
@@ -294,7 +292,7 @@
                 <paper_authors>O’Hagan, Joshua and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>IEEE Visualization and Visual Analytics, 2023</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/o2023simulating.pdf', '_blank')">PDF 9MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/o2023simulating-compressed.pdf', '_blank')">PDF 2MB</button>
-                <button class="button-main" onclick="window.open('./papers/o2023simulating-appendix.pdf', '_blank')">Appendix 9MB</button>
+                <button class="button-other" onclick="window.open('./papers/o2023simulating-appendix.pdf', '_blank')">Appendix 9MB</button>
             </div>
           </li>
           <li>
@@ -317,7 +315,7 @@
                 <paper_authors><b>Chalmers, Andrew</b> and Zickler, Todd and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>Computers & Graphics, 2022</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/chalmers2022illumination.pdf', '_blank')">PDF 3MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2022illumination-compressed.pdf', '_blank')">PDF 2MB</button>
-                <button class="button-video" onclick="window.open('https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers', '_blank')">Video</button>
+                <button class="button-other" onclick="window.open('https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers', '_blank')">Video</button>
             </div>
           </li>
           <li>
@@ -336,7 +334,7 @@
                 <paper_authors>Weir, Joshua and Zhao, Junhong and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>Proceedings of the European Conference on Computer Vision, 2022</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/weir2022deep.pdf', '_blank')">PDF 9MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/weir2022deep-compressed.pdf', '_blank')">PDF 2MB</button>
-                <button class="button-main" onclick="window.open('./papers/weir2022deep-appendix.pdf', '_blank')">Appendix 2MB</button>
+                <button class="button-other" onclick="window.open('./papers/weir2022deep-appendix.pdf', '_blank')">Appendix 2MB</button>
             </div>
           </li>
           <li>
@@ -345,9 +343,9 @@
                 <paper_title>Teleport to the Augmented Real-World With Live Interactive Effects (IFX)</paper_title><br>
                 <paper_authors>Rhee, Taehyun and <b>Chalmers, Andrew</b> and Hoh, Weng Khuan and Roberts, Richard and Butcher, Warren and Finnie, Simon and Barrett, Rose</paper_authors><br>
                 <paper_publisher>Proceedings of the SIGGRAPH Asia Real-Time Live!, 2022</paper_publisher><br>
-                <button class="button-main" onclick="window.open('./papers/rhee2022teleport.pdf', '_blank')">PDF 1MB</button>                <button class="button-main" onclick="window.open('https://dl.acm.org/doi/10.1145/3550453.3570123', '_blank')">DOI</button>
-                <button class="button-main" onclick="window.open('https://sa2022.siggraph.org/en/presentation/?id=real_107&sess=sess143', '_blank')">Event Page</button>
-                <button class="button-video" onclick="window.open('https://youtu.be/WoJE1uS8SAo?feature=shared', '_blank')">Video</button>
+                <button class="button-main" onclick="window.open('./papers/rhee2022teleport.pdf', '_blank')">PDF 1MB</button>                <button class="button-other" onclick="window.open('https://dl.acm.org/doi/10.1145/3550453.3570123', '_blank')">DOI</button>
+                <button class="button-other" onclick="window.open('https://sa2022.siggraph.org/en/presentation/?id=real_107&sess=sess143', '_blank')">Event Page</button>
+                <button class="button-other" onclick="window.open('https://youtu.be/WoJE1uS8SAo?feature=shared', '_blank')">Video</button>
             </div>
           </li>
         </ul>
@@ -388,7 +386,7 @@
                 <paper_authors>Welsford-Ackroyd, Finn and <b>Chalmers, Andrew</b> and Kuffner dos Anjos, Rafael and Medeiros, Daniel and Kim, Hyejin and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>Proceedings of the ACM on Human-Computer Interaction, 2021</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/welsford2021spectator.pdf', '_blank')">PDF 6MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/welsford2021spectator-compressed.pdf', '_blank')">PDF 2MB</button>
-                <button class="button-video" onclick="window.open('https://www.youtube.com/watch?v=hmOa0vGOnYE&ab_channel=ACMSIGCHI', '_blank')">Video</button>
+                <button class="button-other" onclick="window.open('https://www.youtube.com/watch?v=hmOa0vGOnYE&ab_channel=ACMSIGCHI', '_blank')">Video</button>
             </div>
           </li>
         </ul>
@@ -418,7 +416,7 @@
                 <paper_authors><b>Chalmers, Andrew</b> and Zhao, Junhong and Medeiros, Daniel and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>IEEE Transactions on Visualization and Computer Graphics, 2020</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/chalmers2020reconstructing.pdf', '_blank')">PDF 19MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2020reconstructing-compressed.pdf', '_blank')">PDF 2MB</button>
-                <button class="button-main" onclick="window.open('./papers/chalmers2020reconstructing-appendix.pdf', '_blank')">Appendix 1MB</button>
+                <button class="button-other" onclick="window.open('./papers/chalmers2020reconstructing-appendix.pdf', '_blank')">Appendix 1MB</button>
             </div>
           </li>
           <li>
@@ -436,7 +434,7 @@
                 <paper_authors><b>Chalmers, Andrew</b> and Zickler, Todd and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>Pacific Graphics, 2020</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/chalmers2020illumination.pdf', '_blank')">PDF 10MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2020illumination-compressed.pdf', '_blank')">PDF 3MB</button>
-                <button class="button-video" onclick="window.open('https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers', '_blank')">Video</button>
+                <button class="button-other" onclick="window.open('https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers', '_blank')">Video</button>
             </div>
           </li>
         </ul>
@@ -449,7 +447,7 @@
                 <paper_title>Real-Time Underwater Caustics for Mixed Reality 360° Videos</paper_title><br>
                 <paper_authors>Thompson, Stephen and <b>Chalmers, Andrew</b> and Rhee, Taehyun</paper_authors><br>
                 <paper_publisher>IEEE Conference on Virtual Reality and 3D User Interfaces (Poster), 2019</paper_publisher><br>
-                <button class="button-main" onclick="window.open('./papers/thompson2019real-caustics.pdf', '_blank')">PDF 2MB</button>                <button class="button-main" onclick="window.open('./papers/thompson2019real-caustics-poster.pdf', '_blank')">Poster</button>
+                <button class="button-main" onclick="window.open('./papers/thompson2019real-caustics.pdf', '_blank')">PDF 2MB</button>                <button class="button-other" onclick="window.open('./papers/thompson2019real-caustics-poster.pdf', '_blank')">Poster</button>
             </div>
           </li>
           <li>
@@ -516,7 +514,7 @@
                 <paper_authors><b>Chalmers, Andrew</b></paper_authors><br>
                 <paper_publisher>Phd Thesis, 2018</paper_publisher><br>
                 <button class="button-main" onclick="window.open('./papers/chalmers2018illumination.pdf', '_blank')">PDF 79MB</button>                <button class="button-main" onclick="window.open('./papers-compressed/chalmers2018illumination-compressed.pdf', '_blank')">PDF 18MB</button>
-                <button class="button-video" onclick="window.open('https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers', '_blank')">Video</button>
+                <button class="button-other" onclick="window.open('https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers', '_blank')">Video</button>
             </div>
           </li>
         </ul>

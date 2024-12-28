@@ -229,7 +229,7 @@ def convert_to_html_list(entries):
 		.button-other {
 		  padding: 1px 5px;
 		  font-size: 12px;
-		  background-color: #ff0000; 
+		  background-color: #cf7f30; 
 		  color: #fff; 
 		  border: none;
 		  border-radius: 5px;
@@ -237,7 +237,7 @@ def convert_to_html_list(entries):
 		}
 
 		.button-other:hover {
-		  background-color: #cc0000; 
+		  background-color: #b97129; 
 		}
 
 		.button-award {
@@ -326,20 +326,23 @@ def convert_to_html_list(entries):
 			if get_file_size(link_pdf_compressed)!=None and get_file_size(link_pdf_compressed)!="1MB":
 				html_list += f"                <button class=\"button-main\" onclick=\"window.open(\'{link_pdf_compressed}\', \'_blank\')\">PDF {get_file_size(link_pdf_compressed)}</button>\n"
 			if link_pdf_appendix:
-				html_list += f"                <button class=\"button-main\" onclick=\"window.open(\'{link_pdf_appendix}\', \'_blank\')\">Appendix {get_file_size(link_pdf_appendix)}</button>\n"				
+				html_list += f"                <button class=\"button-other\" onclick=\"window.open(\'{link_pdf_appendix}\', \'_blank\')\">Appendix {get_file_size(link_pdf_appendix)}</button>\n"				
 			for item in additional_info:
 				button_style = "button-main"
-				if item[0]=='Video':
+
+				# Button style
+				if item[0]=='Video' or item[0]=='Poster' or item[0]=='Slides' or item[0]=='DOI' or item[0]=='Event Page':
 					button_style = "button-other"
-				elif item[0]=='Poster':
-					button_style = "button-other"
-					item[1] = './papers/'+entry_key+'-poster.pdf'
-				elif item[0]=='Slides':
-					button_style = "button-other"
-					item[1] = './slides/'+entry_key+'.pptx'
 				elif 'Award' in item[0]:
 					button_style = "button-award"
 
+				#
+				if item[0]=='Poster':
+					item[1] = './papers/'+entry_key+'-poster.pdf'
+				elif item[0]=='Slides':
+					item[1] = './slides/'+entry_key+'.pptx'
+
+				#
 				if item[1]=='':
 					html_list += f"                <button class=\"{button_style}\"\">{item[0]}</button>\n"
 				else:
