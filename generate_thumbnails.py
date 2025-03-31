@@ -8,7 +8,8 @@ import os
 
 # crop_params = top left corner, and size, expressed as ratio of the page size
 
-cases = {	'chalmers2024avatar360':(4,((0.08,0.51),(0.099,0.099))), #'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
+cases = {	'nguyen2025full':(0,((0.0,0.0),(0.34,0.34))), #'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
+			'chalmers2024avatar360':(4,((0.08,0.51),(0.099,0.099))), #'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
 			'chen2024neural':(4,((0.15,0.05),(0.45,0.8))),
 			'rhee2023real':(0,((0.3,0.42),(0.34,0.34))),
 			'chalmers2023real':(0,((0.36,0.7),(0.1,0.1))),

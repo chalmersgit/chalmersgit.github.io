@@ -28,7 +28,8 @@ additional_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10
 							'thompson2019real-caustics':[	['Poster', '']],
 							'rhee2018mr360':[		['Second Place Award', '']],
 							'chen2024neural':[		['Poster', '']],
-							'weir2024full':[		['Poster', ''], ['Slides', '']]
+							'weir2024full':[		['Poster', ''], ['Slides', '']],
+							'nguyen2025full':[['Poster', '']]
 						}
 
 
