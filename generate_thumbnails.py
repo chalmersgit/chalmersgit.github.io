@@ -8,7 +8,9 @@ import os
 
 # crop_params = top left corner, and size - expressed as ratio of the page size
 
-cases = {	'nguyen2025full':(0,((0.26,0.58),(0.1,0.5))), #'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
+cases = {	
+			'nguyen2025interaction':(6,((0.65,0.1),(0.25,0.4))), #'nguyen2025interaction':(3,((0.1,0.1),(0.2,0.4))), 
+			'nguyen2025full':(0,((0.26,0.58),(0.1,0.5))),
 			'chalmers2024avatar360':(4,((0.08,0.51),(0.099,0.099))), #'chalmers2024avatar360':(0,((0.2,0.6),(0.35,0.35))),
 			'chen2024neural':(4,((0.15,0.05),(0.45,0.8))),
 			'rhee2023real':(0,((0.3,0.42),(0.34,0.34))),
@@ -90,6 +92,9 @@ def applyBorder(img, T=5):
 
 def extract_and_save_page_as_image(pdf_path, page_number, crop_params, base_name, save_folder):
 	thumbnail_filename = f"{save_folder}/{base_name}-thumbnail.jpg"
+	full_path = os.path.abspath(thumbnail_filename)
+	#if os.path.exists(thumbnail_filename):
+	#	return
 	target_resolution = (300,300)
 
 	# Open the PDF file
@@ -208,6 +213,18 @@ def generate_thumbs():
 		print(count,'/',numPDFs, pdf_file)
 		generate_thumb(pdf_file)
 		count+=1
+
+    #count = 1
+    #for pdf_file in pdf_files_list:
+    #    print(count,'/',numPDFs,':', pdf_file)
+    #    if 'thumbnail.jpg' in pdf_file:
+    #        print("File is already compressed:", pdf_file)
+    #        #print(pdf_file)
+    #        if delete_compressed:
+    #            os.remove(pdf_file) # delete
+    #    else:
+    #        compress_file(pdf_file, compression_level, delete_compressed)
+    #    count+=1
 
 if __name__ == "__main__":
 	print("Running...")
