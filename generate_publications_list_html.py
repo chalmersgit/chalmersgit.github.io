@@ -403,7 +403,7 @@ def handle_special_cases(title, entry_key, publisher):
 	# Special case, paper has same ID as the poster
 	if title=='Real-time underwater caustics for mixed reality 360° videos':
 		entry_key = entry_key+'-caustics'
-		publisher += ' (Poster)'
+		#publisher += ' (Poster)' TODO handle posters properly
 	return entry_key, publisher
 
 def refine_html_title(title_info):
