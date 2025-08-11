@@ -299,6 +299,9 @@ def convert_to_html_list(entries):
 		publisher = refine_html_journal(entry.get('booktitle', entry.get('journal', 'Misc.')))
 
 		entry_key, publisher = handle_special_cases(title, entry_key, publisher)
+		if 'caustics' in entry_key:
+			print(entry_key)
+			print(publisher)
 
 		title = refine_html_title(title)
 
@@ -351,6 +354,12 @@ def convert_to_html_list(entries):
 			
 			html_list += "            </div>\n"
 			html_list += "          </li>\n"
+	
+			if 'caustics' in entry_key:
+				print(entry_key)
+				print(publisher)
+				print(html_list)
+
 	html_list += "        </ul>\n"
 
 	html_list = refine_html(html_list)
