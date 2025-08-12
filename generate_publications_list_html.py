@@ -12,7 +12,9 @@ import math
 additional_publication_info_map = 	{
 							'welsford2020asymmetric':'(poster)',
 							'thompson2019real-caustics':'(poster)',
-							'nguyen2025full':'(poster)'
+							'nguyen2025full':'(poster)',
+							'chalmers2014sky':'(short paper)',
+							'chalmers2014perceptually':'(short paper)'
 						}
 
 additional_button_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10.1145/3610539.3630250'],
@@ -274,7 +276,7 @@ def convert_to_html_list(entries):
 			<nav>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li class="active"><a href="research.html"><b>Research</b></a></li>
+					<li class="active"><a href="research.html"><b>Publications</b></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -282,12 +284,10 @@ def convert_to_html_list(entries):
 		<hr style="border: none; border-top: 1px solid #333; margin: 0;">
 
 		<main>
-			<h2>Research</h2> <!-- Centered "Research" text with Roboto font -->
+			<h2>Publications</h2> 
 			<div class="content">
-				<!-- Add your research content here -->
-				<!-- Add any research-related images here -->
 				<img src="images/research-banner.png" alt="Research Banner" style="width: 100%;">
-				<h2>Publications</h2>
+				<!--  <h2>Publications</h2> -->
 """
 
 	# TODO add bibtex entry for copy/paste
