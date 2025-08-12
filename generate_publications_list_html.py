@@ -9,7 +9,13 @@ import re
 import math
 
 
-additional_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10.1145/3610539.3630250'],
+additional_publication_info_map = 	{
+							'welsford2020asymmetric':'(poster)',
+							'thompson2019real-caustics':'(poster)',
+							'nguyen2025full':'(poster)'
+						}
+
+additional_button_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10.1145/3610539.3630250'],
 													['Event Page', 'https://asia.siggraph.org/2023/presentation/?id=real_110&sess=sess210'],
 													['Video', 'https://youtu.be/lcLjtdlc-7k?feature=shared']],
 							'rhee2023real':[		['DOI', 'https://dl.acm.org/doi/10.1145/3588430.3597245'],
@@ -20,17 +26,20 @@ additional_info_map = 	{	'chalmers2023real':[	['DOI', 'https://dl.acm.org/doi/10
 													['Event Page', 'https://sa2022.siggraph.org/en/presentation/?id=real_107&sess=sess143'],
 													['Video', 'https://youtu.be/WoJE1uS8SAo?feature=shared']],
 							'suppan2021neural':[	['Best Conference Paper Award', '']],
+							'welsford2020asymmetric':[['Poster', '']],
 							'welsford2021spectator':[['Video', 'https://www.youtube.com/watch?v=hmOa0vGOnYE&ab_channel=ACMSIGCHI']],
 							#'chalmers2020reconstructing':[['Video', 'https://www.youtube.com/watch?v=TahPGWyMY20&ab_channel=AndrewChalmers']],
 							'chalmers2022illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
 							'chalmers2020illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
 							'chalmers2018illumination':[['Video', 'https://www.youtube.com/watch?v=ITHvP2uv1cE&ab_channel=AndrewChalmers']],
-							'thompson2019real-caustics':[	['Poster', '']],
+							'thompson2019real-caustics':[	['Poster', ''] ],
 							'rhee2018mr360':[		['Second Place Award', '']],
 							'chen2024neural':[		['Poster', '']],
 							'weir2024full':[		['Poster', ''], ['Slides', '']],
-							'nguyen2025full':[['Poster', '']]
+							'nguyen2025full':[	['Poster', ''] ]
 						}
+
+
 
 
 def get_file_size(file_path):
@@ -298,10 +307,10 @@ def convert_to_html_list(entries):
 		title = entry.get('title', 'Unknown Title')
 		publisher = refine_html_journal(entry.get('booktitle', entry.get('journal', 'Misc.')))
 
-		entry_key, publisher = handle_special_cases(title, entry_key, publisher)
-		if 'caustics' in entry_key:
-			print(entry_key)
-			print(publisher)
+		entry_key, publisher = handle_duplicate_id(title, entry_key, publisher)
+		#if 'caustics' in entry_key:
+		#	print(entry_key)
+		#	print(publisher)
 
 		title = refine_html_title(title)
 
@@ -314,10 +323,14 @@ def convert_to_html_list(entries):
 			link_pdf_appendix = None
 
 
-		additional_info = []
-		if entry_key in additional_info_map:
-			additional_info = additional_info_map[entry_key]
+		additional_button_info = []
+		if entry_key in additional_button_info_map:
+			additional_button_info = additional_button_info_map[entry_key]
 		
+		# Add on publication type (e.g., poster) to publisher info
+		if entry_key in additional_publication_info_map:
+			publisher += (' '+additional_publication_info_map[entry_key])
+
 		#print(year, entry.get('title'))
 		if publisher!='Misc.':
 			html_list += "          <li>\n"
@@ -327,38 +340,36 @@ def convert_to_html_list(entries):
 			html_list += f"                <paper_authors>{entry.get('author', 'Unknown Authors')}</paper_authors><br>\n"
 			html_list += f"                <paper_publisher>{publisher}, {year}</paper_publisher><br>\n"
 			html_list += f"                <button class=\"button-main\" onclick=\"window.open(\'{link_pdf}\', \'_blank\')\">PDF {get_file_size(link_pdf)}</button>"
+			
+
 			if get_file_size(link_pdf_compressed)!=None and get_file_size(link_pdf_compressed)!="1MB":
 				html_list += f"                <button class=\"button-main\" onclick=\"window.open(\'{link_pdf_compressed}\', \'_blank\')\">PDF {get_file_size(link_pdf_compressed)}</button>\n"
 			if link_pdf_appendix:
 				html_list += f"                <button class=\"button-other\" onclick=\"window.open(\'{link_pdf_appendix}\', \'_blank\')\">Appendix {get_file_size(link_pdf_appendix)}</button>\n"				
-			for item in additional_info:
+			for button_item in additional_button_info:
 				button_style = "button-main"
 
 				# Button style
-				if item[0]=='Video' or item[0]=='Poster' or item[0]=='Slides' or item[0]=='DOI' or item[0]=='Event Page':
+				if button_item[0]=='Video' or button_item[0]=='Poster' or button_item[0]=='Slides' or button_item[0]=='DOI' or button_item[0]=='Event Page':
 					button_style = "button-other"
-				elif 'Award' in item[0]:
+				elif 'Award' in button_item[0]:
 					button_style = "button-award"
 
 				#
-				if item[0]=='Poster':
-					item[1] = './papers/'+entry_key+'-poster.pdf'
-				elif item[0]=='Slides':
-					item[1] = './slides/'+entry_key+'.pptx'
+				if button_item[0]=='Poster':
+					button_item[1] = './papers/'+entry_key+'-poster.pdf'
+				elif button_item[0]=='Slides':
+					button_item[1] = './slides/'+entry_key+'.pptx'
 
 				#
-				if item[1]=='':
-					html_list += f"                <button class=\"{button_style}\"\">{item[0]}</button>\n"
+				if button_item[1]=='':
+					html_list += f"                <button class=\"{button_style}\"\">{button_item[0]}</button>\n"
 				else:
-					html_list += f"                <button class=\"{button_style}\" onclick=\"window.open(\'{item[1]}\', \'_blank\')\">{item[0]}</button>\n"
+					html_list += f"                <button class=\"{button_style}\" onclick=\"window.open(\'{button_item[1]}\', \'_blank\')\">{button_item[0]}</button>\n"
 			
 			html_list += "            </div>\n"
 			html_list += "          </li>\n"
 	
-			if 'caustics' in entry_key:
-				print(entry_key)
-				print(publisher)
-				print(html_list)
 
 	html_list += "        </ul>\n"
 
@@ -408,11 +419,10 @@ def capitalize_string(x):
 	x = ''.join(x_list)
 	return x.strip()
 
-def handle_special_cases(title, entry_key, publisher):
+def handle_duplicate_id(title, entry_key, publisher):
 	# Special case, paper has same ID as the poster
 	if title=='Real-time underwater caustics for mixed reality 360° videos':
 		entry_key = entry_key+'-caustics'
-		#publisher += ' (Poster)' TODO handle posters properly
 	return entry_key, publisher
 
 def refine_html_title(title_info):
