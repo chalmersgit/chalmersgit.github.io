@@ -10,6 +10,7 @@ import math
 
 
 additional_publication_info_map = 	{
+							'chalmers2025the':'(poster)',
 							'welsford2020asymmetric':'(poster)',
 							'thompson2019real-caustics':'(poster)',
 							'nguyen2025full':'(poster)',
