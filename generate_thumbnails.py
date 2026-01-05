@@ -9,6 +9,7 @@ import os
 # crop_params = top left corner, and size - expressed as ratio of the page size
 
 cases = {	
+			'zhong2026se360':(0,((0.26,0.75),(0.12,0.12))),
 			'nguyen2025interaction':(3,((0.0,0.1),(0.3,0.36))), #'nguyen2025interaction':(3,((0.1,0.1),(0.2,0.4))), 
 			#'nguyen2025interaction':(4,((0.3,0.5),(0.25,0.4))), #'nguyen2025interaction':(3,((0.1,0.1),(0.2,0.4))), 
 			'nguyen2025full':(0,((0.26,0.75),(0.12,0.12))),
@@ -55,36 +56,38 @@ cases = {
 		}
 
 def remove_whitespace(image_array):
-    # Find indices of non-white pixels along rows and columns
-    non_white_rows = np.any(image_array != 255, axis=1)
-    non_white_cols = np.any(image_array != 255, axis=0)
+	# Find indices of non-white pixels along rows and columns
+	non_white_rows = np.any(image_array != 255, axis=1)
+	non_white_cols = np.any(image_array != 255, axis=0)
 
-    # Find the bounding box of the non-white region
-    min_row, max_row = np.where(non_white_rows)[0][[0, -1]]
-    min_col, max_col = np.where(non_white_cols)[0][[0, -1]]
+	# Find the bounding box of the non-white region
+	min_row, max_row = np.where(non_white_rows)[0][[0, -1]]
+	min_col, max_col = np.where(non_white_cols)[0][[0, -1]]
 
-    # Crop the image_array based on the bounding box
-    cropped_image_array = image_array[min_row:max_row+1, min_col:max_col+1]
+	# Crop the image_array based on the bounding box
+	cropped_image_array = image_array[min_row:max_row+1, min_col:max_col+1]
 
-    return cropped_image_array
+	return cropped_image_array
 
 def crop_image_by_ratio(image, top_left_ratio, size_ratio, do_remove_whitespace=True):
-    height, width, _ = image.shape
+	height, width, _ = image.shape
 
-    y_ratio, x_ratio = top_left_ratio
-    h_ratio, w_ratio = size_ratio
+	y_ratio, x_ratio = top_left_ratio
+	h_ratio, w_ratio = size_ratio
 
-    y = int(y_ratio * height)
-    x = int(x_ratio * width)
-    h = int(h_ratio * width) # instead of height, do it relative to width
-    w = int(w_ratio * width)
+	y = int(y_ratio * height)
+	x = int(x_ratio * width)
+	h = int(h_ratio * width) # instead of height, do it relative to width
+	w = int(w_ratio * width)
 
-    cropped_image = image[y:y+h, x:x+w, :]
+	cropped_image = image[y:y+h, x:x+w, :]
 
-    if do_remove_whitespace:
-	    cropped_image = remove_whitespace(cropped_image)
-
-    return cropped_image
+	if do_remove_whitespace:
+		try:
+			cropped_image = remove_whitespace(cropped_image)
+		except Exception:
+			pass
+	return cropped_image
 
 def applyBorder(img, T=5):
 	img[:,:T,:] = 0
@@ -217,17 +220,17 @@ def generate_thumbs():
 		generate_thumb(pdf_file)
 		count+=1
 
-    #count = 1
-    #for pdf_file in pdf_files_list:
-    #    print(count,'/',numPDFs,':', pdf_file)
-    #    if 'thumbnail.jpg' in pdf_file:
-    #        print("File is already compressed:", pdf_file)
-    #        #print(pdf_file)
-    #        if delete_compressed:
-    #            os.remove(pdf_file) # delete
-    #    else:
-    #        compress_file(pdf_file, compression_level, delete_compressed)
-    #    count+=1
+	#count = 1
+	#for pdf_file in pdf_files_list:
+	#    print(count,'/',numPDFs,':', pdf_file)
+	#    if 'thumbnail.jpg' in pdf_file:
+	#        print("File is already compressed:", pdf_file)
+	#        #print(pdf_file)
+	#        if delete_compressed:
+	#            os.remove(pdf_file) # delete
+	#    else:
+	#        compress_file(pdf_file, compression_level, delete_compressed)
+	#    count+=1
 
 if __name__ == "__main__":
 	print("Running...")
