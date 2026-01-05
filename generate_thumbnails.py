@@ -9,7 +9,7 @@ import os
 # crop_params = top left corner, and size - expressed as ratio of the page size
 
 cases = {	
-			'zhong2026se360':(0,((0.26,0.75),(0.12,0.12))),
+			'zhong2026se360':(0,((0.26,0.5),(0.25,0.239))),
 			'nguyen2025interaction':(3,((0.0,0.1),(0.3,0.36))), #'nguyen2025interaction':(3,((0.1,0.1),(0.2,0.4))), 
 			#'nguyen2025interaction':(4,((0.3,0.5),(0.25,0.4))), #'nguyen2025interaction':(3,((0.1,0.1),(0.2,0.4))), 
 			'nguyen2025full':(0,((0.26,0.75),(0.12,0.12))),
@@ -212,6 +212,10 @@ def generate_thumbs():
 	subfolder_path = './papers/'
 	pdf_files_list = get_pdfs_in_subfolder(subfolder_path)
 	numPDFs = len(pdf_files_list)
+
+	if len(sys.argv)>1:
+		pdf_files_list = [sys.argv[1]]
+		numPDFs = 1
 
 	print("PDF Files in Subfolder:")
 	count = 1
